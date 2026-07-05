@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manas Maheshwari | Senior Software Engineer</title>
+<meta name="description" content="Professional portfolio of Manas Maheshwari, senior software engineer specializing in distributed systems, PostgreSQL performance, and AI tooling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Manas Maheshwari</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="#value">Value Proposition</a>
+      <a href="#bio">Bio</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Senior Software Engineer &middot; Distributed Systems &amp; Data</span>
+      <h1>I keep high&#8209;stakes platforms fast, correct, and running.</h1>
+      <p class="lede">Backend engineer at a fintech clearing platform processing over a million transactions an hour. I work where production reliability, database internals, and practical AI tooling meet.</p>
+      <div class="hero-links">
+        <a class="btn btn-solid" href="#artifacts">View artifacts</a>
+        <a class="btn btn-ghost" href="https://github.com/manas-maheshwari" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="term" role="img" aria-label="Terminal showing a PostgreSQL query fixed from 45 seconds to 23 milliseconds by correcting a type cast and adding a composite index">
+      <div class="term-bar"><span></span><span></span><span></span><em class="term-title">production-incident.sql</em></div>
+      <pre><span class="t-dim">-- before</span>
+<span class="t-bad">Seq Scan</span> on account_transactions
+  Filter: ((account_id)::numeric = $1)
+  Rows Removed by Filter: 39,998,507
+  Execution Time: <span class="t-bad">45,210 ms</span>
+
+<span class="t-dim">-- fix: bind the right type, index for the query</span>
+CREATE INDEX CONCURRENTLY
+  ON account_transactions (account_id, created_at);
+
+<span class="t-dim">-- after</span>
+<span class="t-good">Index Scan</span> using idx_account_created
+  Execution Time: <span class="t-good">23 ms</span></pre>
+    </div>
+  </div>
+</section>
+
+<section id="value">
+  <div class="wrap">
+    <span class="eyebrow">Personal Value Proposition</span>
+    <h2>What I bring</h2>
+    <div class="vp-card">
+      <p>As a senior software engineer specializing in distributed systems and PostgreSQL performance in financial services, I help engineering organizations keep mission&#8209;critical platforms fast, reliable, and auditable at scale. I pair deep production incident experience with modern AI tooling, turning hard&#8209;won operational expertise into tools and assistants that engineering, operations, and compliance teams can use without me in the room.</p>
+    </div>
+  </div>
+</section>
+
+<section id="bio">
+  <div class="wrap">
+    <span class="eyebrow">Professional Bio</span>
+    <h2>About me</h2>
+    <div class="bio-grid">
+      <div>
+        <p>I am a Senior Software Engineer at Apex Fintech Solutions in Austin, Texas, where I own platform infrastructure on the Accounts Platform, the system of record for trading, funding, and compliance workflows across tens of millions of brokerage accounts. My day&#8209;to&#8209;day spans Java, Go, and Python services, PostgreSQL at multi&#8209;million&#8209;row scale, Apache Kafka event pipelines, and Kubernetes on Google Cloud.</p>
+        <p>The work I find most satisfying sits at the sharp end of production: leading P0 incident investigations across team boundaries, diagnosing query plans that silently defeat their indexes, and redesigning event architectures so the next migration does not become the next incident. That experience convinced me that the best engineering knowledge is worthless if it stays in one person's head, which is why I build AI tooling that codifies it, including an MCP&#8209;based accounts platform adopted by three teams and pgtriage, an open&#8209;source PostgreSQL performance auditing server.</p>
+        <p>I hold a Master of Science in Computer Science from Texas State University and am currently deepening my machine learning foundations in graduate coursework at Indiana Wesleyan University. I write about database internals and incident debugging on Medium.</p>
+      </div>
+      <div>
+        <ul class="fact-list">
+          <li><span class="fact-label">Role</span>Senior Software Engineer, Apex Fintech Solutions</li>
+          <li><span class="fact-label">Focus</span>Distributed systems, PostgreSQL performance, AI tooling</li>
+          <li><span class="fact-label">Stack</span>Java, Go, Python, PostgreSQL, Kafka, GCP, Kubernetes</li>
+          <li><span class="fact-label">Education</span>MS Computer Science, Texas State University</li>
+          <li><span class="fact-label">Currently</span>AI/ML graduate coursework, Indiana Wesleyan University</li>
+          <li><span class="fact-label">Open source</span><a href="https://github.com/pgtriage/pgtriage" rel="noopener">pgtriage</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="artifacts">
+  <div class="wrap">
+    <span class="eyebrow">Portfolio Artifacts</span>
+    <h2>Selected work from AIML&#8209;500</h2>
+    <article class="artifact-card">
+      <span class="eyebrow">Artifact 01</span>
+      <h3>pgtriage Assistant: an AI chatbot built with design thinking</h3>
+      <p>A live AI assistant that helps engineers triage PostgreSQL performance problems, designed, built, guardrailed, and tested end to end as part of the AIML&#8209;500 AI Lab.</p>
+      <div class="hero-links">
+        <a class="btn btn-solid" href="artifacts/pgtriage-assistant.html">Read the artifact</a>
+        <a class="btn btn-ghost" href="https://www.chatbase.co/re2tXFwC-G8Z8DfDyKkY0/help" rel="noopener">Try it live</a>
+      </div>
+    </article>
+    <p class="coming">More artifacts will be added here as the course progresses.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="mailto:manas07maheshwari@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/manasmaheshwari" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/manas-maheshwari" rel="noopener">GitHub</a>
+      <a href="https://medium.com/@cs.mailmanas" rel="noopener">Medium</a>
+    </div>
+    <p class="foot-note">Manas Maheshwari &middot; Austin, TX</p>
+  </div>
+</footer>
+
+</body>
+</html>

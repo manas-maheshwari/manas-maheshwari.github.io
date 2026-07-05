@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pgtriage Assistant | Manas Maheshwari</title>
+<meta name="description" content="Portfolio artifact: an AI chatbot for PostgreSQL performance triage, built with design thinking in AIML-500.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html">Manas Maheshwari</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../index.html#value">Value Proposition</a>
+      <a href="../index.html#bio">Bio</a>
+      <a href="../index.html#artifacts">Artifacts</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="art-head">
+  <span class="eyebrow">Artifact 01 &middot; AIML&#8209;500 AI Lab</span>
+  <h1>pgtriage Assistant: an AI chatbot built with design thinking</h1>
+  <p class="art-meta">Created July 2026 &middot; Live deployment on Chatbase</p>
+  <div class="art-cta">
+    <a class="btn btn-solid" href="https://www.chatbase.co/re2tXFwC-G8Z8DfDyKkY0/help" rel="noopener">Try the live assistant</a>
+    <a class="btn btn-ghost" href="https://github.com/pgtriage/pgtriage" rel="noopener">pgtriage on GitHub</a>
+  </div>
+</div>
+
+<div class="art-body">
+
+  <div class="art-section">
+    <h2>Introduction</h2>
+    <p>This artifact is the capstone of the AIML&#8209;500 AI Lab, an assignment that moved through hands&#8209;on practice with large language models, a custom GPT, and Stanford's STORM research assistant before culminating in a build: design and deploy an AI chatbot using design thinking. I chose to build an assistant grounded in my own open&#8209;source project, pgtriage, so the result would be honest to my actual expertise and useful beyond the classroom.</p>
+  </div>
+
+  <div class="art-section">
+    <h2>Description</h2>
+    <p>The pgtriage Assistant is a publicly deployed AI chatbot that helps engineers triage PostgreSQL performance problems. It classifies an incoming problem as a single slow query, a system&#8209;wide slowdown, or a connection&#8209;level issue, asks for the minimum evidence needed, reads pasted EXPLAIN ANALYZE output, and maps each problem to a diagnostic path, naming the pgtriage tool that automates the relevant check. It explains its reasoning at the level of PostgreSQL internals rather than issuing instructions without justification.</p>
+    <p>A representative exchange from testing:</p>
+    <div class="chat" aria-label="Example conversation with the pgtriage Assistant">
+      <div class="msg user"><span class="who">Engineer</span><div class="bubble">My database is slow</div></div>
+      <div class="msg bot"><span class="who">pgtriage Assistant</span><div class="bubble">Is this a single slow query, a system&#8209;wide slowdown, or a connection&#8209;level issue? If you want the fastest path, paste one of these: the SQL plus EXPLAIN (ANALYZE, BUFFERS) output, symptoms like high CPU or lock waits, or current connection counts. Once I know the class, I can point you to the right check.</div></div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <h2>Objective</h2>
+    <p>The assignment objective was to apply design thinking to develop an AI&#8209;based solution to a real problem and demonstrate proficiency with generative AI tools. My personal objective was sharper: reduce an engineer's time from "this query is slow" to "I know exactly what to check next," and prove that an AI assistant can carry safety guardrails appropriate to production database work, such as never emitting destructive SQL as copy&#8209;paste advice.</p>
+  </div>
+
+  <div class="art-section">
+    <h2>Process</h2>
+    <p>I followed the design thinking cycle end to end:</p>
+    <ol>
+      <li><strong>Empathize.</strong> The target user is a peer: an engineer facing a slow database who does not know where to start and pastes query plans into chat tools with no structure. I drew on pain points I have observed repeatedly in production incident work.</li>
+      <li><strong>Define.</strong> I answered ten planning questions before touching any tool: the bot's objective, its knowledge sources, its hard prohibitions, its interaction style, its step&#8209;by&#8209;step process, and what a successful engagement looks like, plus a test scenario for every rule.</li>
+      <li><strong>Ideate.</strong> I evaluated build platforms against the plan, read the selected platform's privacy policy and terms of use before signing up, and scoped the knowledge base to my own public open&#8209;source documentation as a deliberate data&#8209;governance choice.</li>
+      <li><strong>Prototype.</strong> I built the agent on Chatbase, replaced the platform's default system prompt entirely after finding it conflicted with my design, and loaded the pgtriage README as the knowledge source.</li>
+      <li><strong>Test.</strong> I ran six scenarios, one per design rule: a destructive SQL request, a query plan with a hidden type cast, a question about a feature that does not exist, an off&#8209;topic request, an ambiguous problem statement, and a demand to justify its reasoning. All six passed, and I verified the public deployment separately in a logged&#8209;out browser session.</li>
+    </ol>
+  </div>
+
+  <div class="art-section">
+    <h2>Tools and Technologies Used</h2>
+    <ul>
+      <li>Chatbase (agent platform, GPT&#8209;5.4 Mini model) for the build and hosted deployment</li>
+      <li>pgtriage documentation as the curated knowledge source</li>
+      <li>Design thinking framework for planning, prototyping, and test design</li>
+      <li>ChatGPT, Gemini, Claude, a custom GPT, and Stanford STORM in the lab's earlier comparative exercises, which informed the guardrail and evaluation approach</li>
+    </ul>
+  </div>
+
+  <div class="art-section">
+    <h2>Value Proposition</h2>
+    <div class="vp-split">
+      <div class="cell">
+        <h3>Unique Value</h3>
+        <p>This artifact shows the full arc from user empathy to a live, guardrailed, tested AI product, grounded in a real open&#8209;source tool rather than a toy example. The safety constraints and the test suite mapped one&#8209;to&#8209;one to design rules are what distinguish it from a default chatbot.</p>
+      </div>
+      <div class="cell">
+        <h3>Relevance</h3>
+        <p>Engineering teams everywhere are deciding how to adopt AI assistants safely. This artifact is a working reference for how to scope an assistant's knowledge, set hard behavioral boundaries, and verify each one before shipping, exactly the judgment those teams need.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <h2>References</h2>
+    <ul>
+      <li>Live assistant: <a href="https://www.chatbase.co/re2tXFwC-G8Z8DfDyKkY0/help" rel="noopener">chatbase.co/re2tXFwC-G8Z8DfDyKkY0/help</a></li>
+      <li>pgtriage project: <a href="https://github.com/pgtriage/pgtriage" rel="noopener">github.com/pgtriage/pgtriage</a></li>
+      <li>Shao, Y., Jiang, Y., Kanell, T. A., Xu, P., Khattab, O., &amp; Lam, M. S. (2024). Assisting in writing Wikipedia&#8209;like articles from scratch with large language models. NAACL 2024. (STORM, used in the lab's research&#8209;assistant exercise.)</li>
+    </ul>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="mailto:manas07maheshwari@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/manasmaheshwari" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/manas-maheshwari" rel="noopener">GitHub</a>
+      <a href="https://medium.com/@cs.mailmanas" rel="noopener">Medium</a>
+    </div>
+    <p class="foot-note">Manas Maheshwari &middot; Austin, TX</p>
+  </div>
+</footer>
+
+</body>
+</html>
