@@ -275,3 +275,28 @@ section + section { border-top: 1px solid var(--line); }
   .hero { padding: 56px 0 64px; }
   section { padding: 56px 0; }
 }
+
+/* timeline excerpt (artifact 02) */
+.tl {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 22px 28px;
+  margin-top: 18px;
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding: 13px 0;
+}
+.tl-item + .tl-item { border-top: 1px solid var(--line); }
+.tl-year {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--petrol);
+  padding-top: 2px;
+}
+.tl-body strong { display: block; }
+.tl-infra { color: var(--slate); font-size: 0.95rem; }

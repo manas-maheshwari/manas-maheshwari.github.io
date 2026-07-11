@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Infrastructure Behind Intelligence | Manas Maheshwari</title>
+<meta name="description" content="Portfolio artifact: a seven-slide research presentation arguing that every major AI leap was unlocked by compute, data, and distributed systems, from AIML-500.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html">Manas Maheshwari</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../index.html#value">Value Proposition</a>
+      <a href="../index.html#bio">Bio</a>
+      <a href="../index.html#artifacts">Artifacts</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="art-head">
+  <span class="eyebrow">Artifact 02 &middot; AIML&#8209;500 Assignment 1.3</span>
+  <h1>The Infrastructure Behind Intelligence: a timeline of AI, 1943 to 2026</h1>
+  <p class="art-meta">Created July 2026 &middot; Seven&#8209;slide research presentation</p>
+  <div class="art-cta">
+    <a class="btn btn-solid" href="ai-ml-timelines.pptx">Download the presentation</a>
+    <a class="btn btn-ghost" href="https://medium.com/@cs.mailmanas" rel="noopener">Related writing on Medium</a>
+  </div>
+</div>
+
+<div class="art-body">
+
+  <div class="art-section">
+    <h2>Introduction</h2>
+    <p>This artifact comes from AIML&#8209;500 Workshop 1, where the assignment was to research the historical development of artificial intelligence and machine learning and present it as a timeline. A timeline invites a book report: a list of dates and names in order. I decided the presentation would be stronger as an argument, so I built it around a single thesis: every major leap in AI, from the artificial neuron in 1943 to today's large language models, was unlocked by compute, data, and distributed systems as much as by algorithms. The ideas consistently arrived decades early; what changed at each breakthrough was the substrate underneath them.</p>
+  </div>
+
+  <div class="art-section">
+    <h2>Description</h2>
+    <p>The result is a seven&#8209;slide presentation. It opens by naming the three forces that gate every breakthrough on the timeline: compute, data, and distributed systems. It then walks three eras: the foundations era (1943 to 1973), where the core ideas arrive but stall into the first AI winter for lack of hardware and data; the data&#8209;driven turn (1980 to 2011), where expert systems collapse, backpropagation waits on hardware, and the web finally makes data abundant; and the deep learning and generative era (2012 to 2026), where the three forces align and progress goes vertical. Each era closes with a synthesis of why progress stalled or accelerated, including a parallel from my own field: fraud detection became viable not because of a cleverer algorithm, but because transaction data went digital and streaming infrastructure could score it in real time. The final content slide turns the thesis forward, to compute concentration, data quality as the new ceiling, and responsible stewardship, and the deck closes with a full APA 7 reference slide.</p>
+    <p>The argument in one view:</p>
+    <div class="tl" role="img" aria-label="Timeline of five moments in AI history, each pairing an algorithmic idea with the infrastructure that unlocked or throttled it">
+      <div class="tl-item">
+        <span class="tl-year">1943</span>
+        <div class="tl-body"><strong>The artificial neuron</strong><span class="tl-infra">McCulloch and Pitts show networks of simple units can compute logic. The idea sits idle for lack of machines to run it.</span></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1986</span>
+        <div class="tl-body"><strong>Backpropagation</strong><span class="tl-infra">The algorithm behind modern deep learning is popularized, then waits 26 years for hardware that can exploit it.</span></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2012</span>
+        <div class="tl-body"><strong>AlexNet</strong><span class="tl-infra">A 26&#8209;year&#8209;old algorithm plus two consumer GPUs and the ImageNet dataset crushes the field. The thesis in one event.</span></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2017</span>
+        <div class="tl-body"><strong>Transformers</strong><span class="tl-infra">An architecture whose real superpower is scalability: it turns more compute and data directly into more capability.</span></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">Now</span>
+        <div class="tl-body"><strong>LLMs and agentic systems</strong><span class="tl-infra">Scale becomes capability as compute, data, and distributed systems finally line up behind ideas that were waiting all along.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <h2>Objective</h2>
+    <p>The assignment objective was to demonstrate an understanding of how artificial intelligence and machine learning developed over time and to communicate that history clearly. My personal objective was to practice a different skill than Artifact 01 demonstrates. That artifact shows I can design and ship an AI product; this one shows I can synthesize a technical domain into a defensible thesis and communicate it to a mixed audience. I set two rules for myself: every era had to advance the argument rather than list events, and every claim had to trace back to the sources on the reference slide.</p>
+  </div>
+
+  <div class="art-section">
+    <h2>Process</h2>
+    <p>The presentation went through five stages:</p>
+    <ol>
+      <li><strong>Research.</strong> I worked from the assigned course materials and standard references, including Russell and Norvig's textbook, Turing's 1950 paper, the AlexNet and Transformer papers, and Our World in Data's history of AI, building a fact base of dates and claims before deciding what to argue.</li>
+      <li><strong>Thesis.</strong> Reading the history in sequence exposed the pattern: the ideas predate their impact by decades, and the variable that changes at each leap is infrastructure. That observation matched what I see in my own work, where fraud detection became practical through data and streaming infrastructure rather than new math, which is why I trusted the thesis enough to build the presentation around it.</li>
+      <li><strong>Structure.</strong> I organized seven slides as an argument: the thesis and its three forces, three eras that each close with a synthesis of why progress stalled or accelerated, a forward&#8209;looking implications slide, and references. Events that did not serve the argument were cut.</li>
+      <li><strong>Design and citation.</strong> I built the slides in PowerPoint with a consistent visual language and compiled the sources into an APA 7 reference slide.</li>
+      <li><strong>Rehearsal and revision.</strong> I rehearsed the narration and tightened each era's closing synthesis so that the through&#8209;line, infrastructure gating capability, stayed visible from the first slide to the last.</li>
+    </ol>
+  </div>
+
+  <div class="art-section">
+    <h2>Tools and Technologies Used</h2>
+    <ul>
+      <li>Microsoft PowerPoint for slide design and delivery</li>
+      <li>Primary and reference sources, including Turing (1950), Krizhevsky, Sutskever, and Hinton (2012), Vaswani et al. (2017), and Russell and Norvig (2021)</li>
+      <li>APA 7 citation style, compiled in a dedicated reference slide</li>
+      <li>A thesis&#8209;first narrative structure: state the claim, then earn it era by era</li>
+    </ul>
+  </div>
+
+  <div class="art-section">
+    <h2>Value Proposition</h2>
+    <div class="vp-split">
+      <div class="cell">
+        <h3>Unique Value</h3>
+        <p>This is not a chronology of AI; it is an argument about why AI advances, and the third force in that argument, distributed systems, is my day job. It demonstrates the research synthesis and technical communication skill that complements the product&#8209;building skill in Artifact 01, and it is the same skill behind my public writing on database internals.</p>
+      </div>
+      <div class="cell">
+        <h3>Relevance</h3>
+        <p>Organizations deciding where to invest in AI need engineers who can explain why capability jumps happen and what infrastructure each one requires, in language executives and engineers both accept. Senior backend and forward&#8209;deployed roles are half communication; this artifact is evidence I can do that half.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <h2>References</h2>
+    <ul>
+      <li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <em>Advances in Neural Information Processing Systems, 25</em>.</li>
+      <li>Russell, S., &amp; Norvig, P. (2021). <em>Artificial intelligence: A modern approach</em> (4th ed.). Pearson.</li>
+      <li>Turing, A. M. (1950). Computing machinery and intelligence. <em>Mind, 59</em>(236), 433-460.</li>
+      <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., &amp; Polosukhin, I. (2017). Attention is all you need. <em>Advances in Neural Information Processing Systems, 30</em>.</li>
+    </ul>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="mailto:manas07maheshwari@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/manasmaheshwari" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/manas-maheshwari" rel="noopener">GitHub</a>
+      <a href="https://medium.com/@cs.mailmanas" rel="noopener">Medium</a>
+    </div>
+    <p class="foot-note">Manas Maheshwari &middot; Austin, TX</p>
+  </div>
+</footer>
+
+</body>
+</html>
